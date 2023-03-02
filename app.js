@@ -18,7 +18,7 @@ app.use(morgan("dev"));
 app.use(express.static("uploads"));
 
 //Separate files for routes and controllers.
-app.use("/", routes);
+app.use("/api", routes);
 app.all("*", (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
 });
